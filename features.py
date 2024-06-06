@@ -32,8 +32,6 @@ class FeatureService:
     
     def join(self, spine) -> pd.DataFrame:
         res = spine.merge(self.df, how='left', on=self.join_key)
-        # for feat in self.categorical:
-        #     res[feat] = res[feat].fillna('null')
         return res
 
 class StoreFeatureService(FeatureService):
